@@ -6,6 +6,7 @@
 package arsipperpus.intfce;
 
 import java.awt.CardLayout;
+import javax.swing.JLabel;
 
 /**
  *
@@ -16,9 +17,26 @@ public class BahanBaru extends javax.swing.JFrame {
     /**
      * Creates new form BahanBaru
      */
+    admPage halAdm;
+    boolean baru = false;
     public BahanBaru() {
         initComponents();
     }
+
+    public void setBahanBaru(boolean pilih) {
+        if (pilih) {
+            judulAtas.setText("Menambah Bahan Pustaka");
+        }else{
+            judulAtas.setText("Merubah Bahan Pustaka");
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -48,7 +66,7 @@ public class BahanBaru extends javax.swing.JFrame {
         dBahasa = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         bPenerbit1 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        judulAtas = new javax.swing.JLabel();
         pilihBuku = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
         pilihDVD = new javax.swing.JRadioButton();
@@ -61,6 +79,7 @@ public class BahanBaru extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         simpan = new javax.swing.JButton();
+        backButt = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -219,10 +238,11 @@ public class BahanBaru extends javax.swing.JFrame {
 
         mainPanel.add(panelDvd, "panelDvd");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel1.setText("Menambah Bahan Kajian");
+        judulAtas.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        judulAtas.setText("Menambah Bahan Pustaka");
 
         tipeKajian.add(pilihBuku);
+        pilihBuku.setSelected(true);
         pilihBuku.setText("Buku");
         pilihBuku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -264,15 +284,18 @@ public class BahanBaru extends javax.swing.JFrame {
             }
         });
 
+        backButt.setText("Kembali");
+        backButt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(mainPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(simpan, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -298,7 +321,7 @@ public class BahanBaru extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(134, 134, 134)
-                        .addComponent(jLabel1))
+                        .addComponent(judulAtas))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel2)
@@ -307,12 +330,18 @@ public class BahanBaru extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(pilihDVD)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(backButt)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(simpan)
+                .addGap(33, 33, 33))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jLabel1)
+                .addComponent(judulAtas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pilihDVD)
@@ -336,12 +365,15 @@ public class BahanBaru extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addComponent(simpan, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(simpan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(backButt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void pilihDVDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilihDVDActionPerformed
@@ -363,6 +395,10 @@ public class BahanBaru extends javax.swing.JFrame {
 
     private void simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanActionPerformed
         // TODO add your handling code here:
+        halAdm = new admPage();
+        halAdm.setVisible(true);
+        this.dispose();
+        
     }//GEN-LAST:event_simpanActionPerformed
 
     private void dJudul1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dJudul1ActionPerformed
@@ -377,6 +413,14 @@ public class BahanBaru extends javax.swing.JFrame {
         CardLayout card=(CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "panelBuku");
     }//GEN-LAST:event_pilihBukuActionPerformed
+
+    private void backButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtActionPerformed
+        // TODO add your handling code here:
+        halAdm = new admPage();
+        halAdm.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_backButtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -419,11 +463,11 @@ public class BahanBaru extends javax.swing.JFrame {
     private javax.swing.JTextField bPenerbit;
     private javax.swing.JTextField bPenerbit1;
     private javax.swing.JTextField bPengarang;
+    private javax.swing.JButton backButt;
     private javax.swing.JTextField dBahasa;
     private javax.swing.JTextField dJudul1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -439,6 +483,7 @@ public class BahanBaru extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel judulAtas;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JPanel panelBuku;
     private javax.swing.JPanel panelDvd;

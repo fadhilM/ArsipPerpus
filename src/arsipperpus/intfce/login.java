@@ -45,14 +45,10 @@ public class login extends javax.swing.JFrame {
         pasText = new javax.swing.JPasswordField();
         masuk = new javax.swing.JButton();
         tamu = new javax.swing.JButton();
-        jMenuBar2 = new javax.swing.JMenuBar();
-        cobaLagi = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(400, 300));
+        setPreferredSize(new java.awt.Dimension(400, 300));
 
         jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
         jLabel1.setText("Apliaski Pengarsipan Perpustakaan");
@@ -92,31 +88,6 @@ public class login extends javax.swing.JFrame {
                 tamuActionPerformed(evt);
             }
         });
-
-        cobaLagi.setText("File");
-        cobaLagi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cobaLagiActionPerformed(evt);
-            }
-        });
-
-        jMenuItem1.setText("dicoba");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        cobaLagi.add(jMenuItem1);
-
-        jMenuItem2.setText("coba lagi");
-        cobaLagi.add(jMenuItem2);
-
-        jMenuBar2.add(cobaLagi);
-
-        jMenu5.setText("Edit");
-        jMenuBar2.add(jMenu5);
-
-        setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -168,7 +139,7 @@ public class login extends javax.swing.JFrame {
                 .addComponent(masuk)
                 .addGap(11, 11, 11)
                 .addComponent(tamu)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         pack();
@@ -218,17 +189,6 @@ public class login extends javax.swing.JFrame {
         
     }//GEN-LAST:event_pasTextKeyPressed
 
-    private void cobaLagiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cobaLagiActionPerformed
-        // TODO add your handling code here: 
-    }//GEN-LAST:event_cobaLagiActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-        cobaAja = new dicoba();
-        cobaAja.setVisible(true);
-//        this.dispose();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -265,15 +225,10 @@ public class login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu cobaLagi;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JButton masuk;
     private javax.swing.JPasswordField pasText;
     private javax.swing.JButton tamu;

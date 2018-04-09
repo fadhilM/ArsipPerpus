@@ -5,6 +5,8 @@
  */
 package arsipperpus.intfce;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author Lenovo
@@ -14,9 +16,28 @@ public class HasilCari extends javax.swing.JFrame {
     /**
      * Creates new form HasilCari
      */
+    admCari adminCari;
+    search userCari;
+    String Role;
+    BahanBaru edit;
     public HasilCari() {
         initComponents();
     }
+    
+    public void setRole(String role){
+        if (role.equals("admin")) {
+            this.Role = "admin";
+        } else{
+            this.Role = "user";
+        }
+        
+    }
+
+    public JButton getEditButt() {
+        return editButt;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -31,6 +52,8 @@ public class HasilCari extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        backBtt = new javax.swing.JButton();
+        editButt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,14 +95,24 @@ public class HasilCari extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        backBtt.setText("Kembali");
+        backBtt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBttActionPerformed(evt);
+            }
+        });
+
+        editButt.setText("Edit");
+        editButt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editButtActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(167, 167, 167))
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jLabel2)
@@ -88,22 +121,60 @@ public class HasilCari extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(167, 167, 167))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(editButt)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(backBtt)
+                        .addGap(38, 38, 38))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addGap(30, 30, 30)
                 .addComponent(jLabel2)
-                .addGap(42, 42, 42)
+                .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(backBtt)
+                    .addComponent(editButt))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backBttActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBttActionPerformed
+        // TODO add your handling code here:
+        
+        if (Role.equals("admin")) {
+            adminCari = new admCari();
+            adminCari.setVisible(true);
+            this.dispose();
+        }else{
+            userCari = new search();
+            userCari.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_backBttActionPerformed
+
+    private void editButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtActionPerformed
+        // TODO add your handling code here:
+        edit = new BahanBaru();
+        edit.setVisible(true);
+        this.dispose();
+        edit.setBahanBaru(false);
+        
+    }//GEN-LAST:event_editButtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,6 +212,8 @@ public class HasilCari extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backBtt;
+    private javax.swing.JButton editButt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

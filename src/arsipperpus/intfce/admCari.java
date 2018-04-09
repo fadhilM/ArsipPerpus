@@ -16,9 +16,13 @@ public class admCari extends javax.swing.JFrame {
     /**
      * Creates new form admCari
      */
+    admPage halAdm;
+    HasilCari hasil;
     public admCari() {
         initComponents();
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,7 +36,7 @@ public class admCari extends javax.swing.JFrame {
         tipeKajian = new javax.swing.ButtonGroup();
         jLabel6 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        cariButt = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         bBuku = new javax.swing.JRadioButton();
         bDvd = new javax.swing.JRadioButton();
@@ -58,18 +62,19 @@ public class admCari extends javax.swing.JFrame {
         dBahasa = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         dJudul1 = new javax.swing.JTextField();
+        backBtt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Kategori");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pendidikan", "Agama", "Hukum", "IT" }));
 
-        jButton1.setText("Search");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        cariButt.setText("Cari");
+        cariButt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                cariButtActionPerformed(evt);
             }
         });
 
@@ -77,6 +82,7 @@ public class admCari extends javax.swing.JFrame {
         jLabel1.setText("Pencarian");
 
         tipeKajian.add(bBuku);
+        bBuku.setSelected(true);
         bBuku.setText("Buku");
         bBuku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -246,6 +252,13 @@ public class admCari extends javax.swing.JFrame {
 
         mainPanel.add(panelDVD, "panelDVD");
 
+        backBtt.setText("Kembali");
+        backBtt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBttActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -274,13 +287,15 @@ public class admCari extends javax.swing.JFrame {
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(34, 34, 34))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(backBtt)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cariButt)
+                .addGap(45, 45, 45))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -307,9 +322,11 @@ public class admCari extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(26, 26, 26))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cariButt)
+                    .addComponent(backBtt))
+                .addGap(58, 58, 58))
         );
 
         pack();
@@ -337,9 +354,15 @@ public class admCari extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_bPenerbitActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void cariButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariButtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        hasil = new HasilCari();
+        hasil.setVisible(true);
+        this.dispose();
+        hasil.setRole("admin");
+        hasil.getEditButt().setVisible(true);
+        
+    }//GEN-LAST:event_cariButtActionPerformed
 
     private void dPenerbit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dPenerbit1ActionPerformed
         // TODO add your handling code here:
@@ -357,6 +380,14 @@ public class admCari extends javax.swing.JFrame {
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "panelBuku");
     }//GEN-LAST:event_bBukuActionPerformed
+
+    private void backBttActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBttActionPerformed
+        // TODO add your handling code here:
+        halAdm = new admPage();
+        halAdm.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_backBttActionPerformed
 
     /**
      * @param args the command line arguments
@@ -399,11 +430,12 @@ public class admCari extends javax.swing.JFrame {
     private javax.swing.JTextField bJudul;
     private javax.swing.JTextField bPenerbit;
     private javax.swing.JTextField bPengarang;
+    private javax.swing.JButton backBtt;
+    private javax.swing.JButton cariButt;
     private javax.swing.JTextField dBahasa;
     private javax.swing.JTextField dJudul1;
     private javax.swing.JTextField dPenerbit1;
     private javax.swing.JTextField isbn;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
