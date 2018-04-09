@@ -369,6 +369,9 @@
     </Container>
     <Component class="javax.swing.JRadioButton" name="pilihBuku">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="tipeKajian"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Buku"/>
       </Properties>
       <Events>
@@ -377,6 +380,9 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="pilihDVD">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="tipeKajian"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="DVD"/>
       </Properties>
       <Events>

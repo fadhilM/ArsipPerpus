@@ -5,6 +5,8 @@
  */
 package arsipperpus;
 
+import java.awt.CardLayout;
+
 /**
  *
  * @author Lenovo
@@ -235,6 +237,7 @@ public class search extends javax.swing.JFrame {
 
         mainPanel.add(bPanel, "card2");
 
+        tipeKajian.add(pilihBuku);
         pilihBuku.setText("Buku");
         pilihBuku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -242,6 +245,7 @@ public class search extends javax.swing.JFrame {
             }
         });
 
+        tipeKajian.add(pilihDVD);
         pilihDVD.setText("DVD");
         pilihDVD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -332,8 +336,8 @@ public class search extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void pilihBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilihBukuActionPerformed
-//        CardLayout card=(CardLayout)mainPanel.getLayout();
-//        card.show(mainPanel, "panelBuku");
+        CardLayout card=(CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "panelBuku");
     }//GEN-LAST:event_pilihBukuActionPerformed
 
     private void pilihDVDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilihDVDActionPerformed
