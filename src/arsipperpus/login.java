@@ -52,6 +52,7 @@ public class login extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(400, 300));
         setPreferredSize(new java.awt.Dimension(400, 300));
 
         jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
