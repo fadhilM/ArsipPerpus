@@ -158,7 +158,7 @@ public class search extends javax.swing.JFrame {
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
-        mainPanel.add(bPanel, "card2");
+        mainPanel.add(bPanel, "bpanel");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setText("Judul DVD");
@@ -223,7 +223,7 @@ public class search extends javax.swing.JFrame {
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
-        mainPanel.add(dPanel, "card3");
+        mainPanel.add(dPanel, "dPanel");
 
         tipeKajian.add(pilihBuku);
         pilihBuku.setSelected(true);

@@ -4,18 +4,14 @@
  * and open the template in the editor.
  */
 package arsipperpus;
+import arsipperpus.intfce.login;
 
-/**
- *
- * @author Lenovo
- */
 public class ArsipPerpus {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+        login lg = new login();
+        lg.setVisible(true);
     }
     
 }

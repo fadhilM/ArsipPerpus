@@ -7,6 +7,7 @@ package arsipperpus.intfce;
 
 import java.awt.CardLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,13 +22,16 @@ public class BahanBaru extends javax.swing.JFrame {
     boolean baru = false;
     public BahanBaru() {
         initComponents();
+        
     }
 
     public void setBahanBaru(boolean pilih) {
         if (pilih) {
             judulAtas.setText("Menambah Bahan Pustaka");
+            bDelet.setVisible(false);
         }else{
             judulAtas.setText("Merubah Bahan Pustaka");
+            
         }
         
     }
@@ -80,6 +84,7 @@ public class BahanBaru extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         simpan = new javax.swing.JButton();
         backButt = new javax.swing.JButton();
+        bDelet = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -291,6 +296,13 @@ public class BahanBaru extends javax.swing.JFrame {
             }
         });
 
+        bDelet.setText("Delete");
+        bDelet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bDeletActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -332,6 +344,8 @@ public class BahanBaru extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(bDelet)
+                .addGap(18, 18, 18)
                 .addComponent(backButt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(simpan)
@@ -342,7 +356,7 @@ public class BahanBaru extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(judulAtas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pilihDVD)
                     .addComponent(pilihBuku)
@@ -366,9 +380,12 @@ public class BahanBaru extends javax.swing.JFrame {
                     .addComponent(jLabel10)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(simpan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(backButt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(backButt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(bDelet, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(15, 15, 15))
         );
 
@@ -394,7 +411,7 @@ public class BahanBaru extends javax.swing.JFrame {
     }//GEN-LAST:event_bIsbnActionPerformed
 
     private void simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Data Tersimpan");
         halAdm = new admPage();
         halAdm.setVisible(true);
         this.dispose();
@@ -421,6 +438,10 @@ public class BahanBaru extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_backButtActionPerformed
+
+    private void bDeletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeletActionPerformed
+        JOptionPane.showMessageDialog(null, "Data Sudah di Hapus");
+    }//GEN-LAST:event_bDeletActionPerformed
 
     /**
      * @param args the command line arguments
@@ -458,6 +479,7 @@ public class BahanBaru extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bDelet;
     private javax.swing.JTextField bIsbn;
     private javax.swing.JTextField bJudul;
     private javax.swing.JTextField bPenerbit;
