@@ -158,7 +158,7 @@ public class search extends javax.swing.JFrame {
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
-        mainPanel.add(bPanel, "bpanel");
+        mainPanel.add(bPanel, "bPanel");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setText("Judul DVD");

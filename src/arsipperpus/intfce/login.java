@@ -47,7 +47,8 @@ public class login extends javax.swing.JFrame {
         tamu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(400, 300));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMinimumSize(new java.awt.Dimension(400, 315));
         setPreferredSize(new java.awt.Dimension(400, 300));
 
         jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
@@ -61,6 +62,12 @@ public class login extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("Password");
+
+        userText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                userTextKeyPressed(evt);
+            }
+        });
 
         pasText.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -139,7 +146,7 @@ public class login extends javax.swing.JFrame {
                 .addComponent(masuk)
                 .addGap(11, 11, 11)
                 .addComponent(tamu)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         pack();
@@ -188,6 +195,21 @@ public class login extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_pasTextKeyPressed
+
+    private void userTextKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_userTextKeyPressed
+        // TODO add your handling code here:
+        
+        if (evt.getKeyCode()== KeyEvent.VK_ENTER) {
+            pageAdm = new admPage();
+            String pass = new String(pasText.getPassword());
+            if (userText.getText().equals("admin") && pass.equals("admin")) {
+                pageAdm.setVisible(true);
+                this.dispose();
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "login gagal");
+            }
+        }
+    }//GEN-LAST:event_userTextKeyPressed
 
     /**
      * @param args the command line arguments
