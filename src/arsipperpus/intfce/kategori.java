@@ -5,6 +5,9 @@
  */
 package arsipperpus.intfce;
 
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author GROUM
@@ -27,25 +30,28 @@ public class kategori extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tipeFungsi = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        kategoriText = new javax.swing.JTextField();
         saveBtt = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        mainPanel = new javax.swing.JPanel();
+        buatK = new javax.swing.JPanel();
+        bKategoriText = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        editK = new javax.swing.JPanel();
+        eKategoriText1 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        rBuat = new javax.swing.JRadioButton();
+        rEdit = new javax.swing.JRadioButton();
+        deleteBtn = new javax.swing.JButton();
+        kembaliBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setText("Kategori");
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel2.setText("Kategori");
-
-        kategoriText.setText("jTextField1");
-        kategoriText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kategoriTextActionPerformed(evt);
-            }
-        });
 
         saveBtt.setText("Simpan");
         saveBtt.addActionListener(new java.awt.event.ActionListener() {
@@ -54,51 +60,209 @@ public class kategori extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel3.setText("Kategori");
+
+        mainPanel.setLayout(new java.awt.CardLayout());
+
+        bKategoriText.setText("jTextField1");
+        bKategoriText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bKategoriTextActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setText("Kategori");
+
+        javax.swing.GroupLayout buatKLayout = new javax.swing.GroupLayout(buatK);
+        buatK.setLayout(buatKLayout);
+        buatKLayout.setHorizontalGroup(
+            buatKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 418, Short.MAX_VALUE)
+            .addGroup(buatKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(buatKLayout.createSequentialGroup()
+                    .addGap(37, 37, 37)
+                    .addComponent(jLabel2)
+                    .addGap(68, 68, 68)
+                    .addComponent(bKategoriText, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        buatKLayout.setVerticalGroup(
+            buatKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 80, Short.MAX_VALUE)
+            .addGroup(buatKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(buatKLayout.createSequentialGroup()
+                    .addGap(39, 39, 39)
+                    .addGroup(buatKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(bKategoriText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(19, Short.MAX_VALUE)))
+        );
+
+        mainPanel.add(buatK, "buatK");
+
+        eKategoriText1.setText("jTextField1");
+        eKategoriText1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eKategoriText1ActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setText("Kategori");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel5.setText("List Kategori");
+
+        javax.swing.GroupLayout editKLayout = new javax.swing.GroupLayout(editK);
+        editK.setLayout(editKLayout);
+        editKLayout.setHorizontalGroup(
+            editKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editKLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(editKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGroup(editKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(eKategoriText1, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE))
+                .addGap(49, 49, 49))
+        );
+        editKLayout.setVerticalGroup(
+            editKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editKLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(editKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(editKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(eKategoriText1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addContainerGap())
+        );
+
+        mainPanel.add(editK, "editK");
+
+        tipeFungsi.add(rBuat);
+        rBuat.setText("Buat");
+        rBuat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rBuatActionPerformed(evt);
+            }
+        });
+
+        tipeFungsi.add(rEdit);
+        rEdit.setText("Edit");
+        rEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rEditActionPerformed(evt);
+            }
+        });
+
+        deleteBtn.setText("Delete");
+        deleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBtnActionPerformed(evt);
+            }
+        });
+
+        kembaliBtn.setText("kembali");
+        kembaliBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kembaliBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(saveBtt)
-                .addGap(33, 33, 33))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel2)
-                        .addGap(68, 68, 68)
-                        .addComponent(kategoriText, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(186, 186, 186)
-                        .addComponent(jLabel1)))
-                .addContainerGap(57, Short.MAX_VALUE))
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jLabel3)
+                        .addGap(63, 63, 63)
+                        .addComponent(rBuat)
+                        .addGap(18, 18, 18)
+                        .addComponent(rEdit))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(kembaliBtn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(deleteBtn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(saveBtt)
+                                .addGap(25, 25, 25))
+                            .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel1)
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(kategoriText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addComponent(saveBtt)
-                .addContainerGap())
+                    .addComponent(jLabel3)
+                    .addComponent(rBuat)
+                    .addComponent(rEdit))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(saveBtt)
+                    .addComponent(deleteBtn)
+                    .addComponent(kembaliBtn))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void kategoriTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kategoriTextActionPerformed
+    private void bKategoriTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKategoriTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_kategoriTextActionPerformed
+    }//GEN-LAST:event_bKategoriTextActionPerformed
 
     private void saveBttActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBttActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Kategori sudah Disimpan");
     }//GEN-LAST:event_saveBttActionPerformed
+
+    private void eKategoriText1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eKategoriText1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eKategoriText1ActionPerformed
+
+    private void rBuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rBuatActionPerformed
+        CardLayout card=(CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "buatK");
+    }//GEN-LAST:event_rBuatActionPerformed
+
+    private void rEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rEditActionPerformed
+        CardLayout card=(CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "editK");
+    }//GEN-LAST:event_rEditActionPerformed
+
+    private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
+        JOptionPane.showMessageDialog(null, "Kategori sudah Dihapus");
+    }//GEN-LAST:event_deleteBtnActionPerformed
+
+    private void kembaliBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliBtnActionPerformed
+        admPage home=new admPage();
+        home.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_kembaliBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -136,9 +300,22 @@ public class kategori extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField bKategoriText;
+    private javax.swing.JPanel buatK;
+    private javax.swing.JButton deleteBtn;
+    private javax.swing.JTextField eKategoriText1;
+    private javax.swing.JPanel editK;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField kategoriText;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton kembaliBtn;
+    private javax.swing.JPanel mainPanel;
+    private javax.swing.JRadioButton rBuat;
+    private javax.swing.JRadioButton rEdit;
     private javax.swing.JButton saveBtt;
+    private javax.swing.ButtonGroup tipeFungsi;
     // End of variables declaration//GEN-END:variables
 }
