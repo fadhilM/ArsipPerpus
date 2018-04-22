@@ -5,6 +5,8 @@
  */
 package arsipperpus.intfce;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author Lenovo
@@ -21,6 +23,14 @@ public class admPage extends javax.swing.JFrame {
     public admPage() {
         initComponents();
     }
+
+    public JButton getBuatBtt() {
+        return buatBtt;
+    }
+    
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

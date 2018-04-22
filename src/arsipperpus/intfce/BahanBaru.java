@@ -6,8 +6,19 @@
 package arsipperpus.intfce;
 
 import java.awt.CardLayout;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+import org.jdatepicker.JDatePicker;
 
 /**
  *
@@ -24,7 +35,7 @@ public class BahanBaru extends javax.swing.JFrame {
         initComponents();
         
     }
-
+    
     public void setBahanBaru(boolean pilih) {
         if (pilih) {
             judulAtas.setText("Menambah Bahan Pustaka");
@@ -35,6 +46,79 @@ public class BahanBaru extends javax.swing.JFrame {
         }
         
     }
+
+    public JPanel getPanelBuku() {
+        return panelBuku;
+    }
+    
+    public JTextField getbIsbn() {
+        return bIsbn;
+    }
+
+    public JTextField getbJudul() {
+        return bJudul;
+    }
+
+    public JTextField getbPenerbit() {
+        return bPenerbit;
+    }
+
+    public JTextField getbPengarang() {
+        return bPengarang;
+    }
+
+    public JTextField getdJudul1() {
+        return dJudul1;
+    }
+
+    public JTextField getdPenerbit1() {
+        return dPenerbit1;
+    }
+
+    
+    
+    public JComboBox<String> getKategori() {
+        return kategori;
+    }
+
+    public JComboBox<String> getSumber() {
+        return sumber;
+    }
+
+    public JDatePicker getTglMasuk() {
+        return tglMasuk;
+    }
+
+    public JDatePicker getTglTerbit() {
+        return tglTerbit;
+    }
+
+    public JTextField getdBahasa() {
+        return dBahasa;
+    }
+    
+    
+    public JButton getBackButt() {
+        return backBtn;
+    }
+
+    public JButton getSimpan() {
+        return simpan;
+    }
+
+    public ButtonGroup getTipeKajian() {
+        return tipeKajian;
+    }
+
+    public JRadioButton getPilihBuku() {
+        return pilihBuku;
+    }
+
+    public JRadioButton getPilihDVD() {
+        return pilihDVD;
+    }
+    
+    
     
     
     
@@ -69,22 +153,22 @@ public class BahanBaru extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         dBahasa = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        bPenerbit1 = new javax.swing.JTextField();
+        dPenerbit1 = new javax.swing.JTextField();
         judulAtas = new javax.swing.JLabel();
         pilihBuku = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
         pilihDVD = new javax.swing.JRadioButton();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        kategori = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        sumber = new javax.swing.JComboBox<>();
         simpan = new javax.swing.JButton();
-        backButt = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
         bDelet = new javax.swing.JButton();
+        tglTerbit = new org.jdatepicker.JDatePicker();
+        tglMasuk = new org.jdatepicker.JDatePicker();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -215,7 +299,7 @@ public class BahanBaru extends javax.swing.JFrame {
                     .addGroup(panelDvdLayout.createSequentialGroup()
                         .addComponent(jLabel13)
                         .addGap(80, 80, 80)
-                        .addComponent(bPenerbit1)))
+                        .addComponent(dPenerbit1)))
                 .addContainerGap())
         );
         panelDvdLayout.setVerticalGroup(
@@ -234,7 +318,7 @@ public class BahanBaru extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(panelDvdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel13)
-                    .addComponent(bPenerbit1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dPenerbit1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -266,18 +350,18 @@ public class BahanBaru extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Kategori");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Agama", "Bahasa", "Kewarganegaraan", "IT", "Pendidikan", "Sosial" }));
+        kategori.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Agama", "Bahasa", "Kewarganegaraan", "IT", "Pendidikan", "Sosial" }));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel8.setText("Tahun terbit");
+        jLabel8.setText("Tanggal terbit");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel9.setText("Tahun masuk");
+        jLabel9.setText("Tanggal masuk");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel10.setText("Cara Mendapatkan");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Beli", "Hibah", "Hadiah" }));
+        sumber.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Beli", "Hibah", "Hadiah" }));
 
         simpan.setText("Simpan");
         simpan.addActionListener(new java.awt.event.ActionListener() {
@@ -286,10 +370,10 @@ public class BahanBaru extends javax.swing.JFrame {
             }
         });
 
-        backButt.setText("Kembali");
-        backButt.addActionListener(new java.awt.event.ActionListener() {
+        backBtn.setText("Kembali");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backButtActionPerformed(evt);
+                backBtnActionPerformed(evt);
             }
         });
 
@@ -321,31 +405,26 @@ public class BahanBaru extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addGap(26, 26, 26)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9))
-                        .addGap(57, 57, 57)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jTextField1))
-                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(backButt)
+                        .addComponent(backBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(bDelet)
                         .addGap(18, 18, 18)
                         .addComponent(simpan)
-                        .addGap(33, 33, 33))))
+                        .addGap(33, 33, 33))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(kategori, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tglTerbit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tglMasuk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -360,25 +439,27 @@ public class BahanBaru extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel9))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(kategori, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tglTerbit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tglMasuk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(8, 8, 8)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(bDelet, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(backButt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(backBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(simpan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(15, 15, 15))
         );
@@ -404,14 +485,6 @@ public class BahanBaru extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_bIsbnActionPerformed
 
-    private void simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanActionPerformed
-        JOptionPane.showMessageDialog(null, "Data Tersimpan");
-        halAdm = new admPage();
-        halAdm.setVisible(true);
-        this.dispose();
-        
-    }//GEN-LAST:event_simpanActionPerformed
-
     private void dJudul1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dJudul1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_dJudul1ActionPerformed
@@ -425,18 +498,42 @@ public class BahanBaru extends javax.swing.JFrame {
         card.show(mainPanel, "panelBuku");
     }//GEN-LAST:event_pilihBukuActionPerformed
 
-    private void backButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtActionPerformed
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
         halAdm = new admPage();
         halAdm.setVisible(true);
         this.dispose();
         
-    }//GEN-LAST:event_backButtActionPerformed
+    }//GEN-LAST:event_backBtnActionPerformed
 
     private void bDeletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeletActionPerformed
-        JOptionPane.showMessageDialog(null, "Data Sudah di Hapus");
+        JOptionPane.showMessageDialog(null, "Data Sudah diHapus");
     }//GEN-LAST:event_bDeletActionPerformed
 
+    private void simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanActionPerformed
+        // TODO add your handling code here:
+        
+        JOptionPane.showMessageDialog(null, "Data Tersimpan");
+        halAdm = new admPage();
+        halAdm.setVisible(true);
+        this.dispose();
+        
+//        Utk percobaan bisa terambil apa ndak data dr datepicker
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        Calendar value1 = (Calendar)tglTerbit.getModel().getValue();
+        java.util.Date selectedDate1 = value1.getTime();
+        String tgl_terbit = df.format(selectedDate1);
+        System.out.println("tgl terbit = "+tgl_terbit);
+        
+        Calendar value2 = (Calendar)tglMasuk.getModel().getValue();
+        java.util.Date selectedDate2 = value2.getTime();
+        String tgl_masuk = df.format(selectedDate2);
+        System.out.println("tgl masuk = "+tgl_masuk);
+        
+        
+    }//GEN-LAST:event_simpanActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
@@ -477,13 +574,11 @@ public class BahanBaru extends javax.swing.JFrame {
     private javax.swing.JTextField bIsbn;
     private javax.swing.JTextField bJudul;
     private javax.swing.JTextField bPenerbit;
-    private javax.swing.JTextField bPenerbit1;
     private javax.swing.JTextField bPengarang;
-    private javax.swing.JButton backButt;
+    private javax.swing.JButton backBtn;
     private javax.swing.JTextField dBahasa;
     private javax.swing.JTextField dJudul1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JTextField dPenerbit1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -497,15 +592,17 @@ public class BahanBaru extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel judulAtas;
+    private javax.swing.JComboBox<String> kategori;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JPanel panelBuku;
     private javax.swing.JPanel panelDvd;
     private javax.swing.JRadioButton pilihBuku;
     private javax.swing.JRadioButton pilihDVD;
     private javax.swing.JButton simpan;
+    private javax.swing.JComboBox<String> sumber;
+    private org.jdatepicker.JDatePicker tglMasuk;
+    private org.jdatepicker.JDatePicker tglTerbit;
     private javax.swing.ButtonGroup tipeKajian;
     // End of variables declaration//GEN-END:variables
 }

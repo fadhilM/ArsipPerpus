@@ -8,7 +8,7 @@ package arsipperpus.intfce;
 import java.awt.Event.*;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
-import pack1.dicoba;
+import Model.PerpusDB;
 /**
  *
  * @author Lenovo
@@ -20,8 +20,8 @@ public class login extends javax.swing.JFrame {
      */
     search cari;
     admPage pageAdm;
-    arsipperpus.TombolClick enter;
-    dicoba cobaAja;
+    PerpusDB cobaAja;
+    
     public login() {
         initComponents();
     }
@@ -146,7 +146,7 @@ public class login extends javax.swing.JFrame {
                 .addComponent(masuk)
                 .addGap(11, 11, 11)
                 .addComponent(tamu)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         pack();
